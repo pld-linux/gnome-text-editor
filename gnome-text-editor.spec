@@ -1,20 +1,18 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	41
-%define	subver	alpha1
-%define	rel	1
-Release:	0.%{subver}.%{rel}
+Version:	41.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-text-editor/41/%{name}-%{version}.%{subver}.tar.xz
-# Source0-md5:	4719e412aea5ac539bc1b565a51ca336
+Source0:	https://download.gnome.org/sources/gnome-text-editor/41/%{name}-%{version}.tar.xz
+# Source0-md5:	fcdf53089edc572fd28b2dd5cf595204
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	enchant2-devel >= 2.2.0
 BuildRequires:	glib2-devel >= 1:2.69
 BuildRequires:	gtk4-devel >= 4.3
 BuildRequires:	gtksourceview5-devel >= 5.0
-BuildRequires:	libadwaita-devel
+BuildRequires:	libadwaita-devel >= 1.1.0-0.20210927
 BuildRequires:	libicu-devel
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
@@ -28,6 +26,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	enchant2 >= 2.2.0
 Requires:	glib2 >= 1:2.69
 Requires:	gtk4 >= 4.3
+Requires:	libadwaita >= 1.1.0-0.20210927
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,7 +42,7 @@ przy zamknięciu aplikacji. Można wrócić do pracy nawet, jeśli nigdy
 nie została zapisana do pliku.
 
 %prep
-%setup -q -n %{name}-%{version}.%{subver}
+%setup -q
 
 %build
 %meson build
@@ -55,7 +54,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
 
-%find_lang %{name}
+%find_lang %{name} --with-gnome
 
 %clean
 rm -rf $RPM_BUILD_ROOT
