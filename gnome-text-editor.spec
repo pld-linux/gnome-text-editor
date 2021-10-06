@@ -1,12 +1,12 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	41.0
+Version:	41.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-text-editor/41/%{name}-%{version}.tar.xz
-# Source0-md5:	fcdf53089edc572fd28b2dd5cf595204
+# Source0-md5:	c8aa02bbfc3e94887b7d3d5f3122f042
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	enchant2-devel >= 2.2.0
 BuildRequires:	glib2-devel >= 1:2.69
