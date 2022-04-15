@@ -1,20 +1,22 @@
+# TODO: use gtk4-update-icon-cache
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	41.1
-Release:	2
+Version:	42.0
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-text-editor/41/%{name}-%{version}.tar.xz
-# Source0-md5:	c8aa02bbfc3e94887b7d3d5f3122f042
+Source0:	https://download.gnome.org/sources/gnome-text-editor/42/%{name}-%{version}.tar.xz
+# Source0-md5:	5860bf323bc9e70756892650e3f0364c
+Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	enchant2-devel >= 2.2.0
 BuildRequires:	glib2-devel >= 1:2.69
-BuildRequires:	gtk4-devel >= 4.3
-BuildRequires:	gtksourceview5-devel >= 5.0
-BuildRequires:	libadwaita-devel >= 1.1.0-0.20210927
+BuildRequires:	gtk4-devel >= 4.6
+BuildRequires:	gtksourceview5-devel >= 5.3.1
+BuildRequires:	libadwaita-devel >= 1.1.0-1
 BuildRequires:	libicu-devel
-BuildRequires:	meson >= 0.50.0
+BuildRequires:	meson >= 0.59.1
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pcre-devel
 BuildRequires:	pkgconfig
@@ -25,8 +27,9 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	enchant2 >= 2.2.0
 Requires:	glib2 >= 1:2.69
-Requires:	gtk4 >= 4.3
-Requires:	libadwaita >= 1.1.0-0.20210927
+Requires:	gtk4 >= 4.6
+Requires:	gtksourceview5 >= 5.3.1
+Requires:	libadwaita >= 1.1.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,6 +46,7 @@ nie została zapisana do pliku.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %meson build
@@ -73,10 +77,12 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc NEWS README.md
 %attr(755,root,root) %{_bindir}/gnome-text-editor
-%{_datadir}/appdata/org.gnome.TextEditor.appdata.xml
 %{_datadir}/dbus-1/services/org.gnome.TextEditor.service
 %{_datadir}/glib-2.0/schemas/org.gnome.TextEditor.gschema.xml
+%{_datadir}/gnome-text-editor
+%{_datadir}/metainfo/org.gnome.TextEditor.appdata.xml
 %{_desktopdir}/org.gnome.TextEditor.desktop
+%{_iconsdir}/hicolor/scalable/actions/document-admin-symbolic.svg
 %{_iconsdir}/hicolor/scalable/actions/document-modified-symbolic.svg
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.TextEditor.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.TextEditor-symbolic.svg
