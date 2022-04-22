@@ -2,18 +2,18 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	42.0
+Version:	42.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-text-editor/42/%{name}-%{version}.tar.xz
-# Source0-md5:	5860bf323bc9e70756892650e3f0364c
+# Source0-md5:	d69815f587056b5431be022968b0c24b
 Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	enchant2-devel >= 2.2.0
 BuildRequires:	glib2-devel >= 1:2.69
 BuildRequires:	gtk4-devel >= 4.6
-BuildRequires:	gtksourceview5-devel >= 5.3.1
+BuildRequires:	gtksourceview5-devel >= 5.4.1
 BuildRequires:	libadwaita-devel >= 1.1.0-1
 BuildRequires:	libicu-devel
 BuildRequires:	meson >= 0.59.1
@@ -28,7 +28,7 @@ Requires(post,postun):	gtk-update-icon-cache
 Requires:	enchant2 >= 2.2.0
 Requires:	glib2 >= 1:2.69
 Requires:	gtk4 >= 4.6
-Requires:	gtksourceview5 >= 5.3.1
+Requires:	gtksourceview5 >= 5.4.1
 Requires:	libadwaita >= 1.1.0-1
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
