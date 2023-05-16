@@ -2,19 +2,20 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	42.2
-Release:	2
+Version:	43.2
+Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-text-editor/42/%{name}-%{version}.tar.xz
-# Source0-md5:	b7b204d381a641aa92ca36fcd361bb7d
+Source0:	https://download.gnome.org/sources/gnome-text-editor/43/%{name}-%{version}.tar.xz
+# Source0-md5:	5d6a3692505406625289ac197813e218
 Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
+BuildRequires:	editorconfig-devel
 BuildRequires:	enchant2-devel >= 2.2.0
-BuildRequires:	glib2-devel >= 1:2.69
-BuildRequires:	gtk4-devel >= 4.6
-BuildRequires:	gtksourceview5-devel >= 5.4.1
-BuildRequires:	libadwaita-devel >= 1.1.0-1
+BuildRequires:	glib2-devel >= 1:2.73
+BuildRequires:	gtk4-devel >= 4.7
+BuildRequires:	gtksourceview5-devel >= 5.5.0
+BuildRequires:	libadwaita-devel >= 1.2
 BuildRequires:	libicu-devel
 BuildRequires:	meson >= 0.59.1
 BuildRequires:	ninja >= 1.5
@@ -26,10 +27,10 @@ BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	enchant2 >= 2.2.0
-Requires:	glib2 >= 1:2.69
-Requires:	gtk4 >= 4.6
-Requires:	gtksourceview5 >= 5.4.1
-Requires:	libadwaita >= 1.1.0-1
+Requires:	glib2 >= 1:2.73
+Requires:	gtk4 >= 4.7
+Requires:	gtksourceview5 >= 5.5.0
+Requires:	libadwaita >= 1.2
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -82,7 +83,5 @@ rm -rf $RPM_BUILD_ROOT
 %{_datadir}/gnome-text-editor
 %{_datadir}/metainfo/org.gnome.TextEditor.appdata.xml
 %{_desktopdir}/org.gnome.TextEditor.desktop
-%{_iconsdir}/hicolor/scalable/actions/document-admin-symbolic.svg
-%{_iconsdir}/hicolor/scalable/actions/document-modified-symbolic.svg
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.TextEditor.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.TextEditor-symbolic.svg
