@@ -2,21 +2,21 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	45.3
+Version:	46.1
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-text-editor/45/%{name}-%{version}.tar.xz
-# Source0-md5:	946f71dbf9711763a380c95def3e93a3
+Source0:	https://download.gnome.org/sources/gnome-text-editor/46/%{name}-%{version}.tar.xz
+# Source0-md5:	0385f8554d6966dd9c5255c210b9fcb5
 Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	cairo-devel
 BuildRequires:	editorconfig-devel
 BuildRequires:	enchant2-devel >= 2.2.0
 BuildRequires:	glib2-devel >= 1:2.73
-BuildRequires:	gtk4-devel >= 4.7
-BuildRequires:	gtksourceview5-devel >= 5.5.0
-BuildRequires:	libadwaita-devel >= 1.4
+BuildRequires:	gtk4-devel >= 4.12
+BuildRequires:	gtksourceview5-devel >= 5.10.0
+BuildRequires:	libadwaita-devel >= 1.5
 BuildRequires:	libicu-devel
 BuildRequires:	meson >= 0.60.0
 BuildRequires:	ninja >= 1.5
@@ -29,9 +29,9 @@ Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	enchant2 >= 2.2.0
 Requires:	glib2 >= 1:2.73
-Requires:	gtk4 >= 4.7
-Requires:	gtksourceview5 >= 5.5.0
-Requires:	libadwaita >= 1.4
+Requires:	gtk4 >= 4.12
+Requires:	gtksourceview5 >= 5.10.0
+Requires:	libadwaita >= 1.5
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
