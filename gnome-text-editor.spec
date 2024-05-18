@@ -2,12 +2,12 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	46.1
+Version:	46.3
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/gnome-text-editor/46/%{name}-%{version}.tar.xz
-# Source0-md5:	0385f8554d6966dd9c5255c210b9fcb5
+# Source0-md5:	4007932ff1a42594bde19b8a4e9d243a
 Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	cairo-devel
