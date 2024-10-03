@@ -2,22 +2,22 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	46.3
+Version:	47.0
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-text-editor/46/%{name}-%{version}.tar.xz
-# Source0-md5:	4007932ff1a42594bde19b8a4e9d243a
+Source0:	https://download.gnome.org/sources/gnome-text-editor/47/%{name}-%{version}.tar.xz
+# Source0-md5:	4f04c4076e5d963d99eff7d603e95a3f
 Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	cairo-devel
 BuildRequires:	editorconfig-devel
-BuildRequires:	enchant2-devel >= 2.2.0
-BuildRequires:	glib2-devel >= 1:2.73
-BuildRequires:	gtk4-devel >= 4.12
+BuildRequires:	glib2-devel >= 1:2.80
+BuildRequires:	gtk4-devel >= 4.15
 BuildRequires:	gtksourceview5-devel >= 5.10.0
-BuildRequires:	libadwaita-devel >= 1.5
+BuildRequires:	libadwaita-devel >= 1.6
 BuildRequires:	libicu-devel
+BuildRequires:	libspelling-devel >= 0.3.0
 BuildRequires:	meson >= 0.60.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pcre-devel
@@ -27,11 +27,11 @@ BuildRequires:	tar >= 1:1.22
 BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
-Requires:	enchant2 >= 2.2.0
-Requires:	glib2 >= 1:2.73
-Requires:	gtk4 >= 4.12
+Requires:	glib2 >= 1:2.80
+Requires:	gtk4 >= 4.15
 Requires:	gtksourceview5 >= 5.10.0
-Requires:	libadwaita >= 1.5
+Requires:	libadwaita >= 1.6
+Requires:	libspelling >= 0.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
