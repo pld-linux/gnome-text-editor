@@ -2,19 +2,21 @@
 Summary:	GNOME Text Editor
 Summary(pl.UTF-8):	Edytor tekstowy dla GNOME
 Name:		gnome-text-editor
-Version:	47.4
+Version:	48.2
 Release:	1
 License:	GPL v3+
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/gnome-text-editor/47/%{name}-%{version}.tar.xz
-# Source0-md5:	fb513dad11ece36f05faba8ce7298fad
+Source0:	https://download.gnome.org/sources/gnome-text-editor/48/%{name}-%{version}.tar.xz
+# Source0-md5:	69adcaf0fc5d18b0fdd681c3877f099d
 Patch0:		%{name}-no-update.patch
 URL:		https://gitlab.gnome.org/GNOME/gnome-text-editor
 BuildRequires:	cairo-devel
 BuildRequires:	editorconfig-devel
+# -std=gnu17
+BuildRequires:	gcc >= 6:7
 BuildRequires:	glib2-devel >= 1:2.80
-BuildRequires:	gtk4-devel >= 4.15
-BuildRequires:	gtksourceview5-devel >= 5.10.0
+BuildRequires:	gtk4-devel >= 4.17.3
+BuildRequires:	gtksourceview5-devel >= 5.15.0
 BuildRequires:	libadwaita-devel >= 1.6
 BuildRequires:	libicu-devel
 BuildRequires:	libspelling-devel >= 0.3.0
@@ -28,8 +30,8 @@ BuildRequires:	xz
 Requires(post,postun):	desktop-file-utils
 Requires(post,postun):	gtk-update-icon-cache
 Requires:	glib2 >= 1:2.80
-Requires:	gtk4 >= 4.15
-Requires:	gtksourceview5 >= 5.10.0
+Requires:	gtk4 >= 4.17.3
+Requires:	gtksourceview5 >= 5.15.0
 Requires:	libadwaita >= 1.6
 Requires:	libspelling >= 0.3.0
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -84,8 +86,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/gnome-text-editor
 %{_datadir}/dbus-1/services/org.gnome.TextEditor.service
 %{_datadir}/glib-2.0/schemas/org.gnome.TextEditor.gschema.xml
-%{_datadir}/gnome-text-editor
-%{_datadir}/metainfo/org.gnome.TextEditor.appdata.xml
+%{_datadir}/metainfo/org.gnome.TextEditor.metainfo.xml
 %{_desktopdir}/org.gnome.TextEditor.desktop
 %{_iconsdir}/hicolor/scalable/apps/org.gnome.TextEditor.svg
 %{_iconsdir}/hicolor/symbolic/apps/org.gnome.TextEditor-symbolic.svg
